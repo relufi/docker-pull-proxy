@@ -1,1 +1,1 @@
-alpine:20240606 registry.cn-hangzhou.aliyuncs.com/yaming116/alpine:20240606
+alpine:3.18 registry.cn-hangzhou.aliyuncs.com/relufi/alpine:3.18
