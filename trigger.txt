@@ -1,1 +1,1 @@
-rust:1.78.0 registry.cn-hangzhou.aliyuncs.com/relufi/rust:1.78.0
+rust:1.78.0 registry.cn-hangzhou.aliyuncs.com/relufi/my:rust-1.78.0
