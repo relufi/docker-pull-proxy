@@ -24,20 +24,9 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: ${{ secrets.ALIYUN_REGISTRY_USER }}
         password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
-#    - name: Docker pull image
-#      run: |
-#        docker pull
-#
-#    - name: Build and push image to ACR EE
-#      run: |
-#        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $REGISTRY
-#        sh pull.sh
-#        data=`cat trigger.txt`
-#
-#        if [ $MM_NOTIFY_URL ];then
-#          curl  -H 'Content-Type: application/json' \
-#            -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"同步成功 $data \"}}" \
-#            $MM_NOTIFY_URL
-#        else
-#          echo 'MM_NOTIFY_URL not set'
-#        fi
+    - name: Docker pull image
+      run: |
+        docker pull $(cat trigger.txt)
+    - name: Docker push image
+      run: |
+        docker push ${{ env.REGISTRY }}/$(cat trigger.txt)
