@@ -5,8 +5,7 @@ on:
     paths:
       - 'trigger.txt'
 env:
-  REGISTRY_REGION: shanghai
-  REGISTRY: registry.cn-${{ env.REGISTRY_REGION }}.aliyuncs.com
+  REGISTRY: registry.cn-shanghai.aliyuncs.com
 jobs:
   build:
     name: Pull
