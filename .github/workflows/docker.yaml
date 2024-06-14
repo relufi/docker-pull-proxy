@@ -1,9 +1,9 @@
-name: Docker
+name: PullPush
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'trigger.txt'
+#    paths:
+#      - 'trigger.txt'
 env:
   REGISTRY: registry.cn-shanghai.aliyuncs.com
 jobs:
