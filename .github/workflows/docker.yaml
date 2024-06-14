@@ -6,7 +6,7 @@ on:
 #      - 'trigger.txt'
 env:
   REGISTRY: registry.cn-shanghai.aliyuncs.com
-  USER: relufi
+  NAMESPACE: relufi
 jobs:
   build:
     name: Pull
@@ -22,11 +22,11 @@ jobs:
       uses: docker/login-action@v3
       with:
         registry: ${{ env.REGISTRY }}
-        username: ${{ env.USER }}
+        username: ${{ secrets.ALIYUN_REGISTRY_USER }}
         password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
     - name: Docker pull image
       run: |
         docker pull $(cat trigger.txt)
     - name: Docker push image
       run: |
-        docker push ${{ env.REGISTRY }}/${{ env.USER }}/$(cat trigger.txt)
+        docker push ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/$(cat trigger.txt)
