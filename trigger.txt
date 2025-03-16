@@ -1,1 +1,1 @@
-rust:1.79.0
+meilisearch:v1.13.3
